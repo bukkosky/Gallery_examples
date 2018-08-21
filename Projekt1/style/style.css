@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.gallery-panel {
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition:
+        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        background 0.2s;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+    cursor: pointer;
+}
+
+
+.panel1 { background-image:url(https://images.unsplash.com/photo-1534604497402-4f7487554199?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=64951a54efe0451d6cbd6a17f6a787aa&auto=format&fit=crop&w=1834&q=80); }
+
+.panel2 { background-image:url(https://images.unsplash.com/photo-1534628369946-daf0d41fcea3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=232979f4a638e909a72e04e6da4e0864&auto=format&fit=crop&w=1786&q=80); }
+
+.panel3 { background-image:url(https://images.unsplash.com/photo-1534628160501-7f4fa3a362a5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a57f302f151567b586614dfc8d37889e&auto=format&fit=crop&w=1834&q=80); }
+
+.panel4 { background-image:url(https://images.unsplash.com/photo-1534670184791-7e56af50dd5b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34f0243ea3219afc9914f00699b0d604&auto=format&fit=crop&w=1834&q=80); }
+
+.panel5 { background-image:url(https://images.unsplash.com/photo-1534668441853-5579f26d8fcd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a5cfc4b194ed8758c4a3ec7919f6bf07&auto=format&fit=crop&w=1834&q=80); }
+
+.gallery-panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.gallery-panel > *:first-child { transform: translateY(-100%); }
+.gallery-panel.open-active > *:first-child { transform: translateY(0); }
+.gallery-panel > *:last-child { transform: translateY(100%); }
+.gallery-panel.open-active > *:last-child { transform: translateY(0); }
+
+.gallery-panel p {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.gallery-panel.open {
+    flex: 5;
+    font-size: 40px;
+}
